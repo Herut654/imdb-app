@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+import About from './About'
 
 function Dashboard() {
   const navigate = useNavigate()
@@ -19,17 +20,13 @@ function Dashboard() {
   return (
     <>
       <section className='heading'>
-        <h1>Welcome {user && user.name}</h1>
-        <p>Goals Dashboard</p>
+        <About />
       </section>
 
 
 
-      <section className='content'>
-      <p>Goals Dashboard</p>
         
 
-      </section>
     </>
   )
 }

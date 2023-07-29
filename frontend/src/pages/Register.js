@@ -17,11 +17,12 @@ function Register() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    age: "18",
     password: '',
     password2: '',
   })
 
-  const { name, email, password, password2 } = formData
+  const { name, email, age, password, password2 } = formData
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -97,6 +98,17 @@ function Register() {
                   name='email'
                   value={email}
                   placeholder='Enter your email'
+                  onChange={onChange}
+                />
+                <TextField
+                  fullWidth required sx={{ mb: 2.25 }}
+                  type='number'
+                  className='form-control'
+                  id='age'
+                  name='age'
+                  value={age}
+                  placeholder='Enter your age'
+                  InputProps={{inputProps: {min: 18, max: 120}}}
                   onChange={onChange}
                 />
                 <TextField

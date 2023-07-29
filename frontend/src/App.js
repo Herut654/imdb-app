@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { themes } from './themes'
 import Header from './components/Header';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
@@ -14,8 +12,6 @@ import Favorites from './pages/Favorites';
 const LOCAL_STORAGE_KEY = "favorites";
 
 const App = () => {
-  const [mode, setMode] = useState('light');
-  const theme = useMemo(() => createTheme(themes(mode)), [mode]);
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
@@ -31,7 +27,6 @@ const App = () => {
 
   return (
     <>
-      <ThemeProvider theme={theme} >
         <CssBaseline />
         <Router>
           <div className='container'>
@@ -48,7 +43,6 @@ const App = () => {
             </Routes>
           </div>
         </Router>
-      </ThemeProvider>
     </>
   )
 }

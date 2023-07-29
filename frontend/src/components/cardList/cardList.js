@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import "./cardList.css"
 import Cards from "../card/card"
 
 const CardList = ({ dataList }) => {
-
-  
 
     return (
         <div className="movie__list">

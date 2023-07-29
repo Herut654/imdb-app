@@ -9,20 +9,15 @@ const TvShows = () => {
     const dispatch = useDispatch();
     const { movies } = useSelector((state) => state.movies)
 
-
     useEffect(() => {
         dispatch(getTvShows());
     });
 
     return (
-        <>
-            <div className="poster">
-                <h2 className="list__title">MovieList</h2>
-                {!movies ? <Spinner /> : (
-                    <CardList dataList={movies} />
-                )}
-            </div>
-        </>
+        <div className="poster">
+            <h2 className="list__title">TvShows</h2>
+            <CardList dataList={movies} />
+        </div>
     )
 }
 
